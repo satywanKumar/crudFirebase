@@ -1,0 +1,25 @@
+<div id="main">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contactList">
+            <td>{{contact.fullName}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+            <td><button class="btn btn-primary" (click)="contactService.populateForm(contact)">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="deleteContact(contact.$key)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="deleteMessage">
+        <p>contact has been deleted from the database</p>
+      </div>
+</div>

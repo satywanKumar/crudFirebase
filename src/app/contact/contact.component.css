@@ -1,0 +1,32 @@
+label
+{
+    
+    font-family: Courier;
+    color:white;
+ 
+}
+input
+{
+    font-family:Comic Sans MS;
+    
+}
+form
+{
+    position: relative;
+    top:100px;
+}
+
+.invalid-feedback
+{
+    color:red !important;
+}
+#main
+{
+    padding:3vw;
+    background-color: blueviolet;
+    height:700px;
+}
+h2{
+    color:white;
+    text-align: center;
+}

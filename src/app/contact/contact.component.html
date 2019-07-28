@@ -1,0 +1,45 @@
+<div id="main">
+   <div>
+      <h2>CRUD operation Using Angular and Firebase</h2>
+   </div>
+    <div class="row">
+       <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+           <form [formGroup]="this.contactService.form" (ngSubmit)="onSubmit()">
+             <input type="hidden" formControlName="$key"/>
+             <div class="form-group">
+               <label for="fullname">FullName:</label>
+              <input type="text" class="form-control" formControlName="fullName" [ngClass]="{'is-invalid':submitted && formControls.fullName.errors}"/>
+              <div class="invalid-feedback" *ngIf="submitted && formControls.fullName.errors">Full Name is required</div>
+            </div>
+
+             <div class="form-group">
+                <label for="phone">Phone:</label>
+               <input type="text" class="form-control" formControlName="phone" [ngClass]="{'is-invalid':submitted && formControls.phone.errors}"/>
+               <div class="invalid-feedback" *ngIf="submitted && formControls.phone.errors">phone number is required</div>
+            </div>
+
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                 <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':submitted && formControls.email.errors}"/>
+                 <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">invalid email</div>
+
+              </div>
+
+              <div class="form-group">
+                 <input type="submit" class="btn btn-primary"/>
+              </div>
+
+           </form>
+           <br>
+           <div *ngIf="showSuccessMessage">
+            <p>Submitted Successfully on Database.</p>
+         </div>
+        </div>
+        <!-- <div class="col-sm-8">
+            <app-contact-list></app-contact-list>
+        </div> -->
+    </div>
+   </div>
+
+  
