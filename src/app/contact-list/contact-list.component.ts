@@ -9,7 +9,7 @@ import { ContactService } from '../shared/contact.service';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor(private contactService:ContactService) { }
+  constructor(public contactService:ContactService) { }
   contactList = [];
   deleteMessage:boolean;
 

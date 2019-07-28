@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private contactService:ContactService,
+  constructor(public contactService:ContactService,
               private router:Router) { }
   submitted:boolean;
   formControls = this.contactService.form.controls;
