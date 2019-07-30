@@ -1,10 +1,29 @@
 th,td{
     font-family: Comic Sans MS;
     color:white;
+    
 }
+th{
+    background-color: red;
+}
+tr:hover
+{
+  background-color:green;
+  
+}
+
 #main
 {
     background-color: blueviolet;
-    height:700px;
-   
+    padding: 2vw;
+}
+table
+{
+    border:1px solid white;
+}
+h3{
+    color: white;
+    text-align: center;
+    background-color: #FF4081;
+    border-radius: 50%;
 }

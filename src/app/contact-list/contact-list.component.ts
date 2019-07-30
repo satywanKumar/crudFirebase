@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../shared/contact.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -9,9 +11,11 @@ import { ContactService } from '../shared/contact.service';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor(public contactService:ContactService) { }
+  constructor(public contactService:ContactService,
+              public router:Router) { }
   contactList = [];
   deleteMessage:boolean;
+  searchTerm:string;
 
   ngOnInit() {
     this.getContact();
@@ -33,8 +37,12 @@ export class ContactListComponent implements OnInit {
       this.contactService.deleteContact($key);
       this.getContact();
       this.deleteMessage=true;
-      setTimeout(()=>this.deleteMessage=false,3000);
+      setTimeout(()=>this.deleteMessage=false,1000);
     }
+  }
+  createRoute()
+  {
+    this.router.navigate(['/createContact']);
   }
 
 }

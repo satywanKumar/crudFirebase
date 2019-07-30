@@ -10,21 +10,26 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactService } from './shared/contact.service';
 import {environment} from '../environments/environment';
-import {RouterModule} from '@angular/router'
+import {RouterModule} from '@angular/router';
+import { SearchPipe } from './search.pipe';
+import {FormsModule} from '@angular/forms'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    ContactListComponent
+    ContactListComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     RouterModule.forRoot([
+      {path:'',component:ContactListComponent},
        {path:'createContact',component:ContactComponent},
        {path:'contactList',component:ContactListComponent}
     ])
